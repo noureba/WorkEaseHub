@@ -5,7 +5,7 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: process.env.MODE,
   entry: {
     index: "./src/ts/index.ts",
     privacy: "./src/ts/privacy.ts",
