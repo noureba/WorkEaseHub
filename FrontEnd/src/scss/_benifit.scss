@@ -1,0 +1,54 @@
+@use "./variables" as v;
+
+.benfit {
+  padding: 100px 60px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+  > div:first-of-type {
+    max-width: 50%;
+    h3 {
+      font-size: 3rem;
+    }
+    >div{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 60px;
+        >div{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+            i{
+                color: green;
+                font-size: 2rem;
+            }
+            p{
+                color: gray;
+            }
+        }
+    }
+  }
+  >div:last-of-type{
+    max-width: 50%;
+    position: relative;
+    img:last-of-type{
+        position: absolute;
+        left: 0;
+    }
+  }
+}
+
+@media (max-width:1000px){
+    .benfit{
+        flex-wrap: wrap;
+        > div:first-of-type {
+            max-width: 100%;
+        }
+        > div:last-of-type {
+            max-width: 100%;
+        }
+    }
+}

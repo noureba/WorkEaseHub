@@ -1,0 +1,148 @@
+@use "./variables" as v;
+@use "./button" as button;
+
+.plans {
+  padding: 100px 60px;
+
+  > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    h3 {
+      font-size: 3rem;
+    }
+    p {
+      color: gray;
+    }
+    > div {
+      display: flex;
+      background: white;
+      padding: 10px;
+      gap: 10px;
+      border-radius: 10px;
+      > button:first-of-type {
+        background: none;
+        border: 1px solid v.$primary-color;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 1rem;
+        color: v.$primary-color;
+        min-width: 150px;
+        color: v.$primary-color;
+        &:hover {
+          background: v.$primary-color;
+          border: 1px solid v.$primary-color;
+          color: white;
+        }
+      }
+      > button:last-of-type {
+        background: v.$primary-color;
+        border: 1px solid v.$primary-color;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 1rem;
+        min-width: 150px;
+        color: white;
+      }
+    }
+  }
+
+  > div:last-of-type {
+    margin-top: 60px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    > div {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      > h3 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      > p {
+        color: gray;
+        margin: 30px 0;
+      }
+      > div:first-of-type {
+        text-align: center;
+        position: relative;
+        > p:first-of-type {
+          position: absolute;
+          left: 120px;
+          font-size: 1rem;
+        }
+        > p:last-of-type {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+      }
+      > div:last-of-type {
+        background: v.$bg-white;
+        padding: 30px 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 10px;
+        > div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          i {
+            color: green;
+            font-size: 2rem;
+          }
+          p {
+            color: gray;
+            font-weight: 500;
+          }
+        }
+        button {
+          margin-top: 60px;
+          padding: 10px 20px;
+          border: 1px solid v.$primary-color;
+          background-color: v.$primary-color;
+          border-radius: 10px;
+          font-size: 1rem;
+          color: white;
+          font-weight: 500;
+          &:hover {
+            color: v.$primary-color;
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
+.active {
+  background-color: v.$primary-color !important;
+  > p, h3, >div >p {
+    color: white !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .plans {
+    > div:first-of-type {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      h3,
+      p {
+        text-align: center;
+      }
+    }
+    > div:last-of-type {
+      flex-wrap: wrap;
+      > div {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -5,14 +5,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
-  div:first-of-type {
-    max-width: 50%;
+  padding: 100px 60px;
+  > div:first-of-type {
+    max-width: 40%;
     h3 {
       font-size: 3rem;
     }
     img {
-      margin: 50px 0;
+      margin: 30px auto;
+      width: 300px;
+      
     }
     p {
       margin: 50px 0;
@@ -51,7 +53,6 @@
   }
   > div:last-of-type {
     position: relative;
-    max-width: 50%;
     picture > img:last-of-type {
       position: absolute;
       left: 0;
@@ -82,8 +83,16 @@
   .hero {
     flex-wrap: wrap-reverse;
     gap: 30px;
-    div:first-of-type {
+    >div:first-of-type {
       max-width: 100%;
+      h3{
+        font-size: 2rem;
+        >div{
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+      }
     }
     > div:last-of-type {
       max-width: 100%;

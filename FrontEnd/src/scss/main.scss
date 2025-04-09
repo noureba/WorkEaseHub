@@ -6,6 +6,16 @@
 
 @use "./collabs";
 
+@use "./support";
+
+@use "./features";
+
+@use "./benifit";
+
+@use "./plans";
+
+@use "./footer";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -17,10 +27,11 @@
   color: V.$text-color;
   transition: all 0.5 ease;
 }
-body{
+body {
   max-width: 1600px;
-  margin: auto;
+  margin: 0 auto;
   background: linear-gradient(to right, V.$bg-white, #c7eafa);
+
 }
 a,
 button {
