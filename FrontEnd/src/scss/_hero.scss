@@ -1,0 +1,92 @@
+@use "./variables" as v;
+@use "./button" as button;
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  div:first-of-type {
+    max-width: 50%;
+    h3 {
+      font-size: 3rem;
+    }
+    img {
+      margin: 50px 0;
+    }
+    p {
+      margin: 50px 0;
+      line-height: 30px;
+      color: rgb(86, 86, 86);
+      font-weight: 500;
+    }
+    div {
+      display: flex;
+      gap: 10px;
+      button {
+        @include button.button(v.$primary-color);
+      }
+      button:last-of-type {
+        display: flex;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+        i {
+          color: white;
+          font-size: 1.5rem;
+        }
+        span {
+          color: white;
+        }
+      }
+      button:last-of-type:hover{
+        i {
+            color: black;
+          }
+          span {
+            color: black;
+          }
+      }
+    }
+  }
+  > div:last-of-type {
+    position: relative;
+    max-width: 50%;
+    picture > img:last-of-type {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      animation-name: hero;
+      animation-iteration-count: infinite;
+      animation-duration: 0.5s;
+    }
+  }
+}
+@keyframes hero {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    flex-wrap: wrap-reverse;
+    gap: 30px;
+    div:first-of-type {
+      max-width: 100%;
+    }
+    > div:last-of-type {
+      max-width: 100%;
+    }
+  }
+}

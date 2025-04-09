@@ -1,13 +1,28 @@
 @use "./variables" as V;
+
+@use "./header";
+
+@use "./hero";
+
+@use "./collabs";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  color: V.$text-color;
+  transition: all 0.5 ease;
 }
-
-h1 {
-  color: V.$primary-color;
+body{
+  max-width: 1600px;
+  margin: auto;
+  background: linear-gradient(to right, V.$bg-white, #c7eafa);
+}
+a,
+button {
+  cursor: pointer;
 }
