@@ -1,0 +1,50 @@
+@use "./variables" as v;
+@use "./button" as button;
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background: white;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 30px;
+  transition: all 0.2s ease-in-out;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    li {
+      list-style-type: none;
+      border-bottom: 1px solid rgb(186, 186, 186);
+      padding: 10px;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: v.$primary-color;
+        }
+      }
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    button {
+      @include button.button(v.$primary-color);
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  nav {
+    display: none;
+  }
+}
+
+.activeMobileMenu {
+  padding: 50px 30px;
+  max-height: 1000px;
+  transition: all 0.2s ease-in-out;
+}
