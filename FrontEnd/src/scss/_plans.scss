@@ -122,13 +122,17 @@
 }
 .active {
   background-color: v.$primary-color !important;
-  > p, h3, >div >p {
+  > p,
+  h3,
+  > div > p {
     color: white !important;
   }
 }
 
 @media (max-width: 1000px) {
   .plans {
+    padding: 100px 30px;
+
     > div:first-of-type {
       flex-wrap: wrap;
       justify-content: center;

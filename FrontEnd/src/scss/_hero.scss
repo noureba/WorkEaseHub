@@ -81,6 +81,7 @@
 
 @media (max-width: 1000px) {
   .hero {
+    padding: 100px 30px;
     flex-wrap: wrap-reverse;
     gap: 30px;
     >div:first-of-type {
