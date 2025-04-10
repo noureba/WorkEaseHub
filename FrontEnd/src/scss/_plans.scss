@@ -132,7 +132,6 @@
 @media (max-width: 1000px) {
   .plans {
     padding: 100px 30px;
-
     > div:first-of-type {
       flex-wrap: wrap;
       justify-content: center;
@@ -145,7 +144,7 @@
     > div:last-of-type {
       flex-wrap: wrap;
       > div {
-        width: 100%;
+        width: 90%;
       }
     }
   }

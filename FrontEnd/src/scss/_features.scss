@@ -33,6 +33,7 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      flex-basis: 33%;
       h4 {
         font-size: 1.5rem;
       }
@@ -51,6 +52,9 @@
     }
     > div:last-of-type {
         flex-wrap: wrap;
+        >div{
+          flex-basis: 100%;
+        }
     }
   }
 }
