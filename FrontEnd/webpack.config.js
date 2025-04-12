@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
-require("dotenv").config();
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: process.env.MODE,
   entry: {
     index: "./src/ts/index.ts",
     privacy: "./src/ts/privacy.ts",
@@ -60,6 +59,7 @@ module.exports = {
     new miniCssExtractPlugin({
       filename: "[name].css",
     }),
+    new dotenv(),
   ],
 
   devServer: {

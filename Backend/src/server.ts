@@ -3,6 +3,7 @@ import http from "http";
 import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 import { Db, MongoClient } from "mongodb";
+import { json } from "stream/consumers";
 
 //conect to db
 let db: Db | null = null;
@@ -44,6 +45,7 @@ const transporter = nodemailer.createTransport({
   },
 } as SMTPTransport.Options);
 
+//create server
 const server = http.createServer(
   (req: http.IncomingMessage, res: http.ServerResponse) => {
     //cros
@@ -53,9 +55,16 @@ const server = http.createServer(
       "Access-Control-Allow-Headers",
       "Content-Type, Authorization"
     );
+    if (req.method === "OPTIONS") {
+      res.statusCode = 200;
+      return res.end();
+    }
 
     //Get data and send mail
-    if (req.url === "/api/send-email" && req.method === "POST") {
+    if (req.url === "/" && req.method === "GET") {
+      res.statusCode = 200;
+      res.end("server is runing");
+    } else if (req.url === "/api/send-email" && req.method === "POST") {
       let body = "";
 
       req.on("data", (chunk) => {
@@ -67,23 +76,31 @@ const server = http.createServer(
           const parseData = JSON.parse(body);
           const { email, message } = parseData;
 
+          if (!email || !message) {
+            return res.end(
+              JSON.stringify({ success: false, message: "Messing details" })
+            );
+          }
+
           const mailOptions = {
             from: email,
             to: process.env.STMP_ADMIN,
-            subject: "hello",
+            subject: "contact",
             text: message,
           };
           await transporter.sendMail(mailOptions);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.end(JSON.stringify({ message: "done", data: parseData }));
+          res.end(JSON.stringify({ success: true, message: "Message sent" }));
         } catch (error) {
           if (error instanceof Error) {
             res.statusCode = 500;
-            res.end(JSON.stringify({ Error: error.message }));
+            res.end(JSON.stringify({ success: false, message: error.message }));
           } else {
             res.statusCode = 500;
-            res.end("unknow error");
+            res.end(
+              JSON.stringify({ success: false, message: "unknow error" })
+            );
           }
         }
       });
@@ -133,7 +150,7 @@ const server = http.createServer(
       });
     } else {
       res.statusCode = 404;
-      res.end("Not found");
+      res.end(JSON.stringify({ success: false, message: "Not found" }));
     }
   }
 );

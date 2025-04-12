@@ -333,15 +333,16 @@
           <div> 
             <img src="./assets/images/form.png" alt="form icon">
             <p>Get started</p>
+            <p id="email-status"></p>
           </div> 
           <form action=""> 
             <div>
-              <label for="email">Email</label>
-              <input type="text" placeholder="Enter you email" required>
+              <label for="email" >Email *</label>
+              <input type="email" placeholder="Enter you email" id="email" required>
             </div>
             <div>
-              <label for="message">Message</label>
-              <textarea name="message" id="message" placeholder="Type here"></textarea>
+              <label for="message" id="email">Message</label>
+              <textarea name="message" id="message" placeholder="Type here" ></textarea>
             </div>
             <input type="submit" value="Requiste demo" id="demo"> 
           </form>  
@@ -355,6 +356,7 @@
             <input type="email" placeholder="Enter your email here" id="newsLater" required>
             <button id="sendNewsLaterBtn"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
+          <p id="status"></p>
         </div>
 
           <div>
