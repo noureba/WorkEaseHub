@@ -6,7 +6,7 @@ const backendUrl = process.env.BACKEND_URL;
 const barMenuBTN = document.getElementById("barMenuBTN") as HTMLButtonElement;
 const navMenu = document.getElementById("navMenu") as HTMLElement;
 
-barMenuBTN.addEventListener("click", () => {
+ barMenuBTN.addEventListener("click", () => {
   navMenu.classList.toggle("activeMobileMenu");
 });
 

@@ -1,0 +1,50 @@
+# WorkEaseHub 🛠️
+
+**WorkEaseHub** is a full-stack project built to practice and demonstrate my skills across both front-end and back-end development. This project showcases modern web development techniques, clean code practices, and a complete workflow from development to deployment.
+
+---
+
+## 🚀 Tech Stack
+
+### 💻 Front-End
+- HTML
+- CSS / SASS
+- JavaScript (ES6+)
+- TypeScript
+- DOM Manipulation
+- Webpack
+
+### 🧠 Back-End
+- Node.js
+- MongoDB
+- REST APIs
+
+### 🛠️ Tools & DevOps
+- Git & GitHub
+- ESLint
+- Docker
+- Postman
+- Vercel (Deployment)
+- Visual Studio Code
+- Jira (Task Management)
+
+---
+
+## 📦 Features
+
+- Responsive UI with modern styling
+- Dynamic DOM interactions
+- API integration with RESTful endpoints
+- MongoDB for data storage and retrieval
+- Linted and modular codebase using ESLint
+- Deployed on Vercel with CI/CD
+- Dockerized for consistency across environments
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/noureba/WorkEaseHub.git
+cd workeasehub
