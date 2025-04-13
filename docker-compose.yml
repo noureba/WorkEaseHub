@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./Backend
+    container_name: workeasehub-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./Backend/.env
+    restart: always
+
+  frontend:
+    build:
+      context: ./Frontend
+    container_name: workeasehub-frontend
+    ports:
+      - "3000:80"
+    restart: always
+    depends_on:
+      - backend
